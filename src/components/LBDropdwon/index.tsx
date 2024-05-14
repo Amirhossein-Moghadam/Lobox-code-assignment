@@ -41,6 +41,7 @@ const LBDropdown: FC<LBDropdownProps & WithOnChange & WithDropDownActions> = ({
     <div className="root" ref={ref}>
       <div className="textfield-root">
         <input
+          id="textfield"
           type="text"
           value={newValue || value}
           onChange={onChange}
