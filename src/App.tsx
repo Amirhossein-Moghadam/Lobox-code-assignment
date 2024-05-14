@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import LBDropdown from "components/LBDropdwon";
+import "./index.scss";
 
-function App() {
+const App = () => {
+  //* Initial Data For Dropdown
+  const initial = ["Education 🎓", "Science 🧪", "Art 🎭", "Sport ⚽"];
+
+  //* States
+  const [options, setoptions] = useState<string[]>(initial);
+  const [value, setValue] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <LBDropdown
+        options={options}
+        setOptions={setoptions}
+        value={value}
+        setValue={setValue}
+        placeholder={"Please Select Or Write"}
+      />
+
+      <h6 className="author">
+        Cody By{" "}
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://www.linkedin.com/in/amirhossein-moghadam-5b72811a9/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
-          Learn React
-        </a>
-      </header>
+          Amirhossein Moghadam
+        </a>{" "}
+        With 💖
+      </h6>
     </div>
   );
-}
+};
 
 export default App;
